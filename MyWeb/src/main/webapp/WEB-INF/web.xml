@@ -6,8 +6,14 @@
      id="WebApp_ID" version="3.0">
  <display-name>SimpleWebApp</display-name>
  
+ <servlet>
+       <servlet-name>HomeServlet</servlet-name>
+       <servlet-class>src.webboard.servlet.jsp.HomeServlet</servlet-class>
+   </servlet>
+ 
+ 
  <welcome-file-list>
-   <welcome-file>homeView.jsp</welcome-file>
+   <welcome-file>home</welcome-file>
    <welcome-file>index.html</welcome-file>
     
  </welcome-file-list>
