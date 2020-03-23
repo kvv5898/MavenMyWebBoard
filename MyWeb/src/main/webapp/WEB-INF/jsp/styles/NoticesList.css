@@ -1,0 +1,88 @@
+﻿.blink {
+    animation: blink 5s infinite; /* Параметры анимации */
+    text-align: center;
+   }
+   @keyframes blink {
+    from { opacity: 0; /* Непрозрачный текст */ }
+    to { opacity: 2; /* Прозрачный текст */ }
+   }
+
+
+
+.c {
+    border: 1px solid #333; /* Рамка */
+    box-shadow: 0 0 5px rgba(0,2,2,4.3); /* Тень */
+    display: inline-block;
+    padding: 5px 15px; /* Поля */
+    text-decoration: none; /* Убираем подчёркивание */
+    color: #000; /* Цвет текста */
+    animation: blink 2s infinite;
+    background: #6fff6f;
+    
+  }
+   .c:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Тень */
+    background: linear-gradient(to bottom, #fcfff4, #e9e9ce); /* Градиент */
+    color: #a00;
+    animation: none;
+   }
+
+
+th {
+    height: 2cm;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Тень */
+    background: linear-gradient(45deg, #ffffff, #0080ff); /* Градиент */
+    color: black;
+    font-style: normal;
+    font-size: 12pt;
+    border: 1px solid black; /* Рамка */
+    text-align: center;
+    
+}
+
+
+ td {
+    height: 10px;
+    font-size: 10pt;
+    padding: 5px;
+    padding-left: 5px;
+    background: linear-gradient(30deg, #dfdfdf, #ffffff); /* Градиент */
+    box-shadow: 0 0 5px rgba(1,0,0,2.3); /* Тень */
+    text-align: center;
+}
+
+ td:nth-child(even) {
+    width: 10px;
+    
+}
+
+    
+ tr:nth-child(even){
+    background-color: lightgray;
+    
+}
+
+ tr:nth-child(odd){
+       background-color: #ffffff;
+
+}
+
+ tr:not(:first-child){
+    transition: all 2s ease-in-out;
+
+
+   }
+
+ tr:not(:first-child):hover {
+    color:black;
+    text-transform:uppercase;
+    transform: scale(1,1.3);
+    background: windowtext(to bottom, #fcfff4, #fff8ce); /* Градиент */
+   transition: all 2s ease-in-out;
+
+
+  }
+
+
+   
+
