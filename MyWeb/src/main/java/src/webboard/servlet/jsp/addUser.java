@@ -43,12 +43,17 @@ public class addUser extends HttpServlet {
     	Connection conn = logUser.getStoredConnection(request);
 		
     	if (conn==null) {
-    		try {
-				conn = JDBCPostgreSQL.conni();
-			} catch (ClassNotFoundException | SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+    		
+				try {
+					conn = JDBCPostgreSQL.conni();
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		
     	}
     	
         String user_name = (String) request.getParameter("user_name");

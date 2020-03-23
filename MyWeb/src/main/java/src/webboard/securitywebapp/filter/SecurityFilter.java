@@ -30,11 +30,9 @@ public class SecurityFilter implements Filter {
     public SecurityFilter() {
     }
  
-    @Override
     public void destroy() {
     }
  
-    @Override
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
             throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;
@@ -48,12 +46,18 @@ public class SecurityFilter implements Filter {
         User_account logUs = logUser.getlogUser(request.getSession());
         if (logUser.getStoredConnection(request) == null & logUser.getlogUser(request.getSession()) != null) 
         {
-        	try {
-				conn = JDBCPostgreSQL.conni();
-			} catch (ClassNotFoundException | SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+        	
+				try {
+					conn = JDBCPostgreSQL.conni();
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+			
         	logUser.storeConnection(request, conn);
         }
         
@@ -104,7 +108,6 @@ public class SecurityFilter implements Filter {
         chain.doFilter(wrapRequest, response);
     }
  
-    @Override
     public void init(FilterConfig fConfig) throws ServletException {
  
     }

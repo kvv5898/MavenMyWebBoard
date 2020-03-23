@@ -29,7 +29,7 @@ public class finduser {
 			userfind.setuser_id(user_id);
             userfind.setuser_name(user_name);
             userfind.setpassword(password);
-            List<String> roles= new ArrayList<>();
+            List<String> roles= new ArrayList<String>();
             if (user_name.equals("Admin") | user_name.equals("admin")) {
             	roles.add("Admin");
             } else {
