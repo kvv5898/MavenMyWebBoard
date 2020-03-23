@@ -23,7 +23,7 @@ public class logUser {
         request.setAttribute(ATT_NAME_CONNECTION, conn);
     }
  
-    // Получить объект Connection сохраненный в attribute в request.
+    
     public static Connection getStoredConnection(ServletRequest request) {
     	System.out.println("Read conn - " + request.getAttribute(ATT_NAME_CONNECTION));
         Connection conn = (Connection) request.getAttribute(ATT_NAME_CONNECTION);
@@ -31,13 +31,13 @@ public class logUser {
     }
     
     
-    // Сохранить информацию пользователя в Session.
+    
     public static void storelogUser(HttpSession session, User_account logUser) { 
     	System.out.println("Write logUser for " + logUser.getuser_name() + "(JAVA)");
         session.setAttribute("logUser", logUser);
     }
  
-    // Получить информацию пользователя, сохраненную в Session.
+   
     public static User_account getlogUser(HttpSession session) {
         User_account logUser = (User_account) session.getAttribute("logUser");
         if (logUser == null) {

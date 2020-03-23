@@ -28,7 +28,7 @@ public class ExitServlet extends HttpServlet {
             
             System.out.println("exit session.invalidate(): " + session);  
            
-            // Redirect (Перенаправить) на страницу /LoginInfo.
+           
             response.sendRedirect(request.getContextPath() + "/login");
         }
     }

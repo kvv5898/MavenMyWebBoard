@@ -25,7 +25,7 @@ public class noticesEdit extends HttpServlet {
  
     
  
-    // Отобразить страницу редактирования заметки.
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -76,8 +76,7 @@ public class noticesEdit extends HttpServlet {
  
     }
  
-    // После того, как пользователь отредактировал информацию и нажал на Submit.
-    // Данный метод будет выполнен.
+   
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -106,18 +105,17 @@ public class noticesEdit extends HttpServlet {
             e.printStackTrace();
             errorString = e.getMessage();
         }
-        // Сохранить информацию в request attribute перед тем как forward к views.
+       
         request.setAttribute("errorString", errorString);
         request.setAttribute("notices_edit", notices_edit);
  
-        // Если имеется ошибка, forward к странице edit.
+       
         if (errorString != null) {
             RequestDispatcher dispatcher = request.getServletContext()
                     .getRequestDispatcher("/WEB-INF/jsp/EditNotices.jsp");
             dispatcher.forward(request, response);
         }
-        // Если все хорошо.
-        // Redirect к странице со списком продуктов.
+       
         else {
             response.sendRedirect(request.getContextPath() + "/notices");
         }
